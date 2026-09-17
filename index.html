@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Professor Ahmed Tijjani Mora: Pharmacist, Regulator, Academic</title>
 <meta name="description" content="The official portfolio of Professor Ahmed Tijjani Mora, OON, mni, Pro-Chancellor of Igbinedion University, Okada, and a pillar of pharmacy regulation in Nigeria.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%232e2013'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='23' font-weight='bold' fill='%23c9a35c' text-anchor='middle'%3EATM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
@@ -460,6 +461,85 @@
   footer .titles{ font-size:13px; color:var(--gold-soft); margin-bottom:28px; }
   footer .fine{ font-size:12.5px; color:rgba(244,236,217,0.55); margin-top:26px; }
 
+  /* ---------- lectures / documents ---------- */
+  .doc-filters{
+    display:flex; flex-wrap:wrap; gap:10px;
+    justify-content:center;
+    margin-bottom:38px;
+  }
+  .doc-filter{
+    font-family:'Poppins',sans-serif;
+    font-size:13px; font-weight:500;
+    padding:8px 18px;
+    border:1px solid var(--rule);
+    background:transparent;
+    color:var(--brown);
+    cursor:pointer;
+    transition:background .2s, color .2s, border-color .2s;
+  }
+  .doc-filter:hover{ border-color:var(--gold); color:var(--gold); }
+  .doc-filter.is-active{
+    background:var(--brown-deep);
+    border-color:var(--brown-deep);
+    color:var(--cream);
+  }
+
+  .doc-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(268px,1fr));
+    gap:18px;
+  }
+  .doc-card{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:22px 20px;
+    text-decoration:none;
+    color:inherit;
+    transition:transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .doc-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 28px -14px rgba(46,32,19,0.35);
+    border-color:var(--gold-soft);
+  }
+  .doc-icon{ flex:0 0 auto; margin-top:2px; }
+  .doc-card h3{
+    font-size:14.5px;
+    font-weight:500;
+    line-height:1.45;
+    margin:0 0 7px;
+    color:var(--brown-deep);
+  }
+  .doc-meta{
+    font-size:12px;
+    color:var(--brown-warm);
+    letter-spacing:0.02em;
+  }
+  .doc-cat{
+    display:block;
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .doc-note{
+    text-align:center;
+    font-size:13.5px;
+    color:var(--brown-warm);
+    margin:34px auto 0;
+    max-width:520px;
+  }
+  .doc-card.is-hidden{ display:none; }
+
+  @media (max-width:480px){
+    .doc-grid{ grid-template-columns:1fr; gap:14px; }
+    .doc-card{ padding:18px 16px; }
+  }
+
   ::selection{ background:var(--gold-soft); color:var(--brown-deep); }
 
   .hero-role,
@@ -490,6 +570,7 @@
       <li><a href="#journey">Journey</a></li>
       <li><a href="#leadership">Leadership</a></li>
       <li><a href="#scholarship">Scholarship</a></li>
+      <li><a href="#lectures">Lectures</a></li>
       <li><a href="#honours">Honours</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#legacy">Legacy</a></li>
@@ -779,6 +860,368 @@
     </div>
   </section>
 
+  <!-- ================= LECTURES & PAPERS ================= -->
+  <section class="band alt" id="lectures">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Lectures &amp; Papers</div>
+        <h2>The written and spoken record</h2>
+        <p>A working archive of lectures, regulatory papers, addresses, manuscripts and bibliographies spanning 1988 to 2025. Select any document to open it.</p>
+      </div>
+
+      <div class="doc-filters">
+        <button class="doc-filter is-active" data-cat="all" type="button">All documents</button>
+        <button class="doc-filter" data-cat="Lectures & Addresses" type="button">Lectures &amp; Addresses</button>
+        <button class="doc-filter" data-cat="Regulation & Policy" type="button">Regulation &amp; Policy</button>
+        <button class="doc-filter" data-cat="Remarks & Proceedings" type="button">Remarks &amp; Proceedings</button>
+        <button class="doc-filter" data-cat="Books & Manuscripts" type="button">Books &amp; Manuscripts</button>
+        <button class="doc-filter" data-cat="Bibliography" type="button">Bibliography</button>
+        <button class="doc-filter" data-cat="Biography & Profile" type="button">Biography &amp; Profile</button>
+      </div>
+
+      <div class="doc-grid">
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/lecture-policy-reforms-regulatory-challenges.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>Policy Reforms and Regulatory Challenges in Nigeria's Pharmaceutical Sector</h3>
+            <span class="doc-meta">PDF &middot; 6 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/challenges-of-health-regulation-nigeria.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>The Challenges of Health Regulation in Nigeria</h3>
+            <span class="doc-meta">PDF &middot; 11 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/challenges-of-health-regulation-nigeria-ii.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>The Challenges of Health Regulation in Nigeria (II)</h3>
+            <span class="doc-meta">PDF &middot; 15 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/health-regulatory-agencies-professional-harmony.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>Health Regulatory Agencies as Instruments for Professional Harmony</h3>
+            <span class="doc-meta">PDF &middot; 7 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/role-of-health-regulatory-agencies.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>The Role of Health Regulatory Agencies in Nigeria</h3>
+            <span class="doc-meta">PDF &middot; 51 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/the-nigerian-pharmacist.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>The Nigerian Pharmacist</h3>
+            <span class="doc-meta">PDF &middot; 10 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/regulatory-challenges-pharmacy-practice-nigeria.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>Regulatory Challenges Facing Pharmacy Practice in Nigeria</h3>
+            <span class="doc-meta">PDF &middot; 13 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Lectures & Addresses" href="documents/text-of-address-pharmacy-forum.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Lectures &amp; Addresses</span>
+            <h3>Text of Address to the Pharmacy Forum</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/overview-regulatory-functions-pcn.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>An Overview of the Regulatory Functions of the PCN</h3>
+            <span class="doc-meta">PDF &middot; 12 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/implementation-regulatory-functions-pcn.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>The Implementation of the Regulatory Functions of the PCN</h3>
+            <span class="doc-meta">PDF &middot; 8 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/implementation-regulatory-control-functions-slides.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>The Implementation of Regulatory Control Functions (Slides)</h3>
+            <span class="doc-meta">PDF &middot; 26 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/effective-implementation-consultant-pharmacy-slides.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>Effective Implementation of the Consultant Pharmacy Cadre (Slides)</h3>
+            <span class="doc-meta">PDF &middot; 44 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/ensuring-access-to-registered-products.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>Ensuring Access to Registered Pharmaceutical Products in Licensed Premises</h3>
+            <span class="doc-meta">PDF &middot; 9 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/code-of-ethics-pharmaceutical-inspectors.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>Code of Ethics for Pharmaceutical Inspectors</h3>
+            <span class="doc-meta">PDF &middot; 5 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/pharmacists-council-of-nigeria-overview.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>The Pharmacists Council of Nigeria: An Overview</h3>
+            <span class="doc-meta">PDF &middot; 9 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/presentation-by-the-registrar-pcn.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>Presentation by the Registrar, Pharmacists Council of Nigeria</h3>
+            <span class="doc-meta">PDF &middot; 38 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/appendix-pcn-regulatory-documents.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>Appendix: PCN Regulatory Documents</h3>
+            <span class="doc-meta">PDF &middot; 9 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Regulation & Policy" href="documents/workshop-to-finalise-curriculum.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Regulation &amp; Policy</span>
+            <h3>Workshop to Finalise the Pharmacy Curriculum</h3>
+            <span class="doc-meta">PDF &middot; 5 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/abupaa-nec-inauguration-remarks.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>Remarks at the Inauguration of the ABUPAA National Executive Committee</h3>
+            <span class="doc-meta">PDF &middot; 5 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/remarks-chairman-committee-registrars-health-professions.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>Remarks by the Chairman, Committee of Registrars of Health Professions</h3>
+            <span class="doc-meta">PDF &middot; 10 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/opening-remarks-maiden-joint-meeting.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>Opening Remarks at the Maiden Joint Meeting</h3>
+            <span class="doc-meta">PDF &middot; 4 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/opening-remarks-by-the-chairman.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>Opening Remarks by the Chairman</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/remarks-by-the-chairman.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>Remarks by the Chairman</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/remarks-consultancy-workshop.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>Remarks at the Consultancy Workshop</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/new-year-remarks-to-staff.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>New Year Remarks to Staff</h3>
+            <span class="doc-meta">PDF &middot; 2 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Remarks & Proceedings" href="documents/notification-letter-governor-uba-sani.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Remarks &amp; Proceedings</span>
+            <h3>Notification Letter to Governor Uba Sani</h3>
+            <span class="doc-meta">PDF &middot; 4 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Books & Manuscripts" href="documents/lizard-shape-model-drug-distribution.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Books &amp; Manuscripts</span>
+            <h3>The Lizard Shape Model in Drug Distribution in Nigeria</h3>
+            <span class="doc-meta">PDF &middot; 70 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Books & Manuscripts" href="documents/lizard-shape-model-second-third-edition.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Books &amp; Manuscripts</span>
+            <h3>The Lizard Shape Model: Second &amp; Third Editions</h3>
+            <span class="doc-meta">PDF &middot; 51 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Books & Manuscripts" href="documents/tribute-book-manuscript.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Books &amp; Manuscripts</span>
+            <h3>A Pillar of Pharmacy Regulation in Nigeria (Full Manuscript)</h3>
+            <span class="doc-meta">PDF &middot; 633 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Books & Manuscripts" href="documents/manual-marketing-pharmaceutical-manufacturing-plant.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Books &amp; Manuscripts</span>
+            <h3>Manual for Marketing in a Pharmaceutical Manufacturing Plant in Nigeria</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Books & Manuscripts" href="documents/pharmaceutical-marketing-manual.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Books &amp; Manuscripts</span>
+            <h3>Pharmaceutical Marketing Manual</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Books & Manuscripts" href="documents/books-authored-and-edited.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Books &amp; Manuscripts</span>
+            <h3>Books Authored, Co-authored and Edited</h3>
+            <span class="doc-meta">PDF &middot; 7 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Bibliography" href="documents/list-of-conferences-seminars-workshops-1988-2025.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Bibliography</span>
+            <h3>List of Conferences, Seminars and Workshop Papers, 1988–2025</h3>
+            <span class="doc-meta">PDF &middot; 27 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Bibliography" href="documents/pharmacy-papers-and-lectures-1988-2025.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Bibliography</span>
+            <h3>Pharmacy Papers and Lectures, 1988–2025</h3>
+            <span class="doc-meta">PDF &middot; 16 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Bibliography" href="documents/topics-of-conferences-and-seminars-presented.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Bibliography</span>
+            <h3>Topics of Conferences and Seminars Presented</h3>
+            <span class="doc-meta">PDF &middot; 22 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Bibliography" href="documents/pharmaceutical-conferences-seminar-topics-overview.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Bibliography</span>
+            <h3>Pharmaceutical Conferences and Seminar Topics: An Overview</h3>
+            <span class="doc-meta">PDF &middot; 2 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Bibliography" href="documents/selected-papers-chronological-edition.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Bibliography</span>
+            <h3>Selected Papers: Chronological Edition</h3>
+            <span class="doc-meta">PDF &middot; 5 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Biography & Profile" href="documents/international-executive-curriculum-vitae.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Biography &amp; Profile</span>
+            <h3>International Executive Curriculum Vitae</h3>
+            <span class="doc-meta">PDF &middot; 10 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Biography & Profile" href="documents/profile-distinguished-pharmacist-academic-regulator.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Biography &amp; Profile</span>
+            <h3>A Distinguished Pharmacist, Academic, Regulator and Public Servant</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Biography & Profile" href="documents/biography-profile-original.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Biography &amp; Profile</span>
+            <h3>Professional Profile and Career Summary</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Biography & Profile" href="documents/refined-introduction-and-zaria-history.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Biography &amp; Profile</span>
+            <h3>Refined Introduction: Zaria, Tudun Wada and the Mora Family</h3>
+            <span class="doc-meta">PDF &middot; 67 pages</span>
+          </span>
+        </a>
+        <a class="doc-card" data-cat="Biography & Profile" href="documents/dr-abdurrahman-mora-distinguished-educationist.pdf" target="_blank" rel="noopener">
+          <svg class="doc-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ab7f34" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="12" y="17.5" font-family="Poppins,sans-serif" font-size="5.2" font-weight="600" fill="#ab7f34" stroke="none" text-anchor="middle">PDF</text></svg>
+          <span>
+            <span class="doc-cat">Biography &amp; Profile</span>
+            <h3>Dr. Abdurrahman Mora: A Distinguished Educationist</h3>
+            <span class="doc-meta">PDF &middot; 3 pages</span>
+          </span>
+        </a>
+      </div>
+
+      <p class="doc-note">42 documents in the archive. Papers delivered at over 400 conferences, seminars and workshops are catalogued in the bibliography volumes above.</p>
+    </div>
+  </section>
+
   <!-- ================= GALLERY ================= -->
   <section class="band" id="gallery">
     <div class="wrap">
@@ -901,5 +1344,23 @@
   </div>
 </footer>
 
+
+<script>
+(function(){
+  var filters = document.querySelectorAll('.doc-filter');
+  var cards = document.querySelectorAll('.doc-card');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var cat = btn.getAttribute('data-cat');
+      filters.forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      cards.forEach(function(card){
+        var show = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+        card.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
